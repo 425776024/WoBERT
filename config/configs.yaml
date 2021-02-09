@@ -1,15 +1,6 @@
 log:
   log_dir: 'logs'
-  log_file_name: 'bert_classification.log'
-
-# web configs:
-web:
-  debug: false
-  #  host: 0.0.0.0
-  host: 0.0.0.0
-  port: 8890
-  worker_num: 1
-  kernel: uvicorn.workers.UvicornWorker
+  log_file_name: 'WoBERT_classification.log'
 
 project:
   PROJECT_NAME: 'news_clas'

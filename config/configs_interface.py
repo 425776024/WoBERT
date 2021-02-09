@@ -7,22 +7,6 @@ import torch
 from src.utils.logers import LOGS
 
 
-class WebConfigs(BaseModel):
-    debug: bool = False
-    host: str
-    port: int
-    worker_num: Optional[int] = 1
-    kernel: str
-    bind: Optional[str] = None
-
-    @validator("bind", pre=False, always=True)
-    def set_bind(cls, v, values):
-        if v:
-            return v
-        else:
-            return f"{values['host']}:{values['port']}"
-
-
 class LogConfigs(BaseModel):
     log_dir: str
     log_file_name: str
@@ -98,7 +82,6 @@ class TrainArgs(BaseModel):
 
 class Configs(BaseModel):
     log: LogConfigs
-    web: WebConfigs
     project: ProjectConfigs
     data: DataConfigs
     train_args: TrainArgs
