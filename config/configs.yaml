@@ -1,0 +1,49 @@
+log:
+  log_dir: 'logs'
+  log_file_name: 'bert_classification.log'
+
+# web configs:
+web:
+  debug: false
+  #  host: 0.0.0.0
+  host: 0.0.0.0
+  port: 8890
+  worker_num: 1
+  kernel: uvicorn.workers.UvicornWorker
+
+project:
+  PROJECT_NAME: 'news_clas'
+  VERSION: 'v1'
+
+data:
+  train_data: 'data/train.csv'
+  bad_case_data: 'data/bad_case.csv'
+
+train_args:
+  # train/test/cmd 训练或者测试
+  mode: 'train'
+  # cpu / cuda:n , 使用的设备环境
+  gpus: 'cuda:2'
+  # 以工程目录为基准下的目录
+  # 模型保存目录
+  save_model_dir: 'data/save_model'
+  # 模型保存名称
+  save_model_name: '社会_地方类'
+  # bert pretrained model path
+  pretrained_weights_path: '/Users/jiang/Documents/pre_train_models/wobert-base'
+  # 断点训练/增量训练加载的{save_model_dir/}下的模型，if null，从0训练
+  train_from: null
+  # {train_data}中测试/训练 数据的划分比
+  test_date_rate: 0.2
+  # 学习率
+  lr: 0.00002
+  epochs: 10
+  warmup_steps: 0
+  weight_decay: 0
+  print_every_batch: 10
+  save_checkpoint_steps: 100
+  step: 0
+  max_length: 45
+  batch_size: 16
+  # 训练途中评价,true则每{save_checkpoint_steps} step评估，并保存一次
+  on_eval: true

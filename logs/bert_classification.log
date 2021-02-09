@@ -1,0 +1,47 @@
+2021-02-10 00:03:34.908 | DEBUG    | config.configs_interface:<module>:120 - {'log': {'log_dir': 'logs', 'log_file_name': 'bert_classification.log'}, 'web': {'debug': False, 'host': '0.0.0.0', 'port': 8890, 'worker_num': 1, 'kernel': 'uvicorn.workers.UvicornWorker', 'bind': '0.0.0.0:8890'}, 'project': {'PROJECT_DIR': PosixPath('/Users/jiang/Documents/Github/WoBERT'), 'PROJECT_NAME': 'news_clas', 'VERSION': 'v1'}, 'data': {'train_data': '/Users/jiang/Documents/Github/WoBERT/data/train.csv', 'bad_case_data': '/Users/jiang/Documents/Github/WoBERT/data/bad_case.csv'}, 'train_args': {'mode': 'train', 'gpus': 'cuda:2', 'device': 'cpu', 'save_model_dir': '/Users/jiang/Documents/Github/WoBERT/data/save_model', 'save_model_name': '社会_地方类', 'train_from': None, 'pretrained_weights_path': '/Users/jiang/Documents/pre_train_models/wobert-base', 'test_date_rate': 0.2, 'lr': 2e-05, 'epochs': 10, 'warmup_steps': 0, 'weight_decay': 0, 'print_every_batch': 10, 'save_checkpoint_steps': 100, 'step': 0, 'max_length': 45, 'batch_size': 16, 'on_eval': True}}
+2021-02-10 00:03:39.644 | DEBUG    | src.data_utils.data_loader:get_data:89 - Train set shape:(163219, 3)
+2021-02-10 00:03:39.658 | DEBUG    | src.data_utils.data_loader:get_data:92 - 原始类别数据：地方       10136
+娱乐        7964
+游戏        7186
+时尚        7024
+健康        7009
+教育        7001
+体育        6998
+汽车        6995
+星座        6986
+美食        6982
+历史        6961
+育儿        6947
+军事        6931
+旅游        6919
+社会        6824
+两性情感      6731
+动漫        6615
+幽默        6266
+科技        6246
+财经        5796
+时政        5578
+房产        5510
+科学探索      3377
+宠物        2795
+美文        2537
+生活        1430
+摄影        1407
+奇闻          63
+经济           3
+教育/社会        1
+没事           1
+Name: label, dtype: int64
+2021-02-10 00:03:39.665 | DEBUG    | src.data_utils.data_loader:get_data:98 - Train set shape:(16960, 3)
+2021-02-10 00:03:39.668 | DEBUG    | src.data_utils.data_loader:get_data:100 - 过滤后数据：地方    10136
+社会     6824
+Name: label, dtype: int64
+2021-02-10 00:03:39.679 | DEBUG    | src.data_utils.train_test_split:train_test_split:44 - 1 banance to: len=6824
+2021-02-10 00:03:39.679 | DEBUG    | src.data_utils.train_test_split:train_test_split:44 - 0 banance to: len=7000
+2021-02-10 00:03:39.709 | DEBUG    | src.data_utils.data_loader:__init__:49 - all data_sentences:16960, all data_labels:16960
+2021-02-10 00:03:39.710 | DEBUG    | src.data_utils.data_loader:__init__:50 - train_batch_count:652, batch_size:16
+2021-02-10 00:03:39.710 | DEBUG    | src.data_utils.data_loader:__init__:51 - test_batch_count:211
+2021-02-10 00:03:39.710 | DEBUG    | src.data_utils.data_loader:__init__:52 - batch_train_inputs len:652
+2021-02-10 00:03:39.710 | DEBUG    | src.data_utils.data_loader:__init__:53 - batch_test_inputs len:211
+2021-02-10 00:03:43.668 | DEBUG    | __main__:<module>:185 - 程序运行开始，2021-02-10 00:03:43.668499
+2021-02-10 00:04:49.881 | DEBUG    | __main__:train:84 - Epoch:0 ｜ Batch: 10, Loss: 0.6161029279232025
