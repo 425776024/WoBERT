@@ -35,3 +35,10 @@ python train.py
 
 ## 5.案例数据
 ``data/train.csv``
+
+
+## 细节
+
+- 除了transformers转换模型，主要是tokenizer的变化，这里直接套了个``jieba``分词在分词器中
+- 稍微自定义了个专门的``分词``，见src/models/bert_model.py:``WoBertTokenizer``
+- 稍微自定义了个专门的``BERT分类模型``，见src/models/bert_model.py:``WoBertClassificationModel``
