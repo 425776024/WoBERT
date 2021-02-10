@@ -78,7 +78,7 @@ class DataLoader:
             self.batch_test_inputs.append(self.test_inputs[i * self.batch_size: (i + 1) * self.batch_size])
             self.batch_test_targets.append(self.test_targets[i * self.batch_size: (i + 1) * self.batch_size])
 
-    def get_data(self, min_label_count=100):
+    def get_data(self, min_label_count=0):
         '''
         更具 min_label_count 进行过滤，（不分析特点类别，全部混合训练）
         :return: data_sentences, data_labels, label_to_index, index_to_label
