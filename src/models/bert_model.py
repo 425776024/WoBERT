@@ -18,8 +18,18 @@ class WoBertTokenizer(BertTokenizer):
         # else:
         #     split_tokens = self.wordpiece_tokenizer.tokenize(text)
         # return split_tokens
-        js = jieba.lcut(text)
-        return js
+        cut_words = jieba.lcut(text)
+        return_words = []
+        for w in cut_words:
+            if w in self.vocab:
+                # will not [UNK]
+                return_words.append(w)
+            else:
+                # will be [UNK]
+                w = list(w)
+                return_words.extend(w)
+
+        return return_words
 
     def tokenize(self, text, **kwargs):
         all_special_tokens = self.all_special_tokens

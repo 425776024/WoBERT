@@ -52,7 +52,6 @@ class TrainArgs(BaseModel):
     weight_decay: int = 0
     print_every_batch: int
     save_checkpoint_steps: int
-    step: int
     max_length: int
     batch_size: int
     on_eval: bool

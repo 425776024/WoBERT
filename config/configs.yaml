@@ -21,7 +21,7 @@ train_args:
   # 模型保存名称
   save_model_name: '社会_地方类'
   # bert pretrained model path
-  pretrained_weights_path: '/Users/jiang/Documents/pre_train_models/wobert-base'
+  pretrained_weights_path: '/Users/jiang/Documents/pre_train_models/wobert-base-pytorch'
   # 断点训练/增量训练加载的{save_model_dir/}下的模型，if null，从0训练
   train_from: null
   # {train_data}中测试/训练 数据的划分比
@@ -33,7 +33,6 @@ train_args:
   weight_decay: 0
   print_every_batch: 10
   save_checkpoint_steps: 100
-  step: 0
   max_length: 45
   batch_size: 16
   # 训练途中评价,true则每{save_checkpoint_steps} step评估，并保存一次
