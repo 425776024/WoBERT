@@ -33,7 +33,6 @@ class WoBertTokenizer(BertTokenizer):
 
     def tokenize(self, text, **kwargs):
         all_special_tokens = self.all_special_tokens
-        text = self.prepare_for_tokenization(text, **kwargs)
 
         def lowercase_text(t):
             # convert non-special tokens to lowercase
@@ -106,12 +105,11 @@ class WoBertClassificationModel(nn.Module):
 
         '''
         测试词汇级分词是否成功：
-        text = '全球性的厂里冠心病很严重'
+        text = '家里的大蒜居然是很好的护发素'
         cc = self.tokenizer.tokenize(text=text)
         cc1 = self.tokenizer.encode(text=text)
         cc2 = self.tokenizer.decode(token_ids=cc1)
         '''
-
         self.bert = BertModel.from_pretrained(train_args.pretrained_weights_path)
         # train_args.pretrained_weights_path/config.json
         self.dropout = nn.Dropout(self.bert.config.hidden_dropout_prob)
