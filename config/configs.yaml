@@ -19,7 +19,7 @@ train_args:
   # 模型保存目录
   save_model_dir: 'data/save_model'
   # 模型保存名称
-  save_model_name: '社会_地方类'
+  save_model_name: '新闻分类'
   # bert pretrained model path
   pretrained_weights_path: '/Users/jiang/Documents/pre_train_models/wobert-base-pytorch'
   # 断点训练/增量训练加载的{save_model_dir/}下的模型，if null，从0训练
